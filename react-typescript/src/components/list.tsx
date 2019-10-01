@@ -1,26 +1,50 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 
 class List extends React.Component {
     render() {
         let data = [
             {
                 "id": 1,
-                "first_name": "Customer_1",
-                "last_name": "Customer_11",
-                "email": "customer1@mail.com",
-                "phone": "00000000000",
-                "address": "Customer_1 Address",
-                "description": "Customer_1 description"
+                "title": "Customer_1",
+                "short_desc": "Customer_11",
+                "description": "customer1@mail.com",
+                "no_of_ingridents": "00000000000",
+                "chef": "Customer_1 Address",
+                "reviews": "Customer_1 description",
+                "prep_time": 10,
+                "cook_time": 10,
+                "no_of_servings": 3,
+                "category": "World Cuisine",
+                "no_of_steps": 7
             },
             {
                 "id": 2,
-                "first_name": "Customer_2",
-                "last_name": "Customer_2",
-                "email": "customer2@mail.com",
-                "phone": "00000000000",
-                "address": "Customer_2 Adress",
-                "description": "Customer_2 Description"
+                "title": "Customer_2",
+                "short_desc": "Customer_2",
+                "description": "customer2@mail.com",
+                "no_of_ingridents": "00000000000",
+                "chef": "Customer_2 Adress",
+                "reviews": "Customer_2 reviews",
+                "prep_time": 10,
+                "cook_time": 10,
+                "no_of_servings": 3,
+                "category": "World Cuisine",
+                "no_of_steps": 7
+            }, {
+                "id": 3,
+                "title": "Customer_2",
+                "short_desc": "Customer_2",
+                "description": "customer2@mail.com",
+                "no_of_ingridents": "00000000000",
+                "chef": "Customer_2 Adress",
+                "reviews": "Customer_2 Description",
+                "prep_time": 10,
+                "cook_time": 10,
+                "no_of_servings": 3,
+                "category": "World Cuisine",
+                "no_of_steps": 7
             }
         ];
 
@@ -32,32 +56,19 @@ class List extends React.Component {
                     </div>
                 )}
                 <div className="container">
-                    <div className="row">
-                        <table className="table table-bordered">
-                            <thead className="thead-light">
-                                <tr>
-                                    <th scope="col">Firstname</th>
-                                    <th scope="col">Lastname</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Phone</th>
-                                    <th scope="col">Address</th>
-                                    <th scope="col">Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {data && data.map(customer =>
-                                    <tr key={customer.id}>
-                                        <td>{customer.first_name}</td>
-                                        <td>{customer.last_name}</td>
-                                        <td>{customer.email}</td>
-                                        <td>{customer.phone}</td>
-                                        <td>{customer.address}</td>
-                                        <td>{customer.description}</td>
-                                    </tr>
-                                )}
-                            </tbody>
-                        </table>
-                    </div>
+                    <Row>
+                        {data && data.map((recipe) => {
+                            return (
+                                <Col sm="3">
+                                    <Card body>
+                                        <CardTitle>{recipe.title}</CardTitle>
+                                        <CardText>{recipe.short_desc}</CardText>
+                                        <Link to={`/receipe/${recipe.id}`}>See Full Recipe</Link>
+                                    </Card>
+                                </Col>
+                            )
+                        })}
+                    </Row>
                 </div>
             </div>
         );

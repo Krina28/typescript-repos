@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Hello from './Hello';
 import App from './App';
 import List from './components/list';
+import Recipe from './components/recipe';
 
 function Routes() {
     return (
@@ -16,15 +16,11 @@ function Routes() {
                         <li>
                             <Link to="/list">List</Link>
                         </li>
-                        <li>
-                            <Link to="/app">Second Product</Link>
-                        </li>
                     </ul>
                 </nav>
-
-                <Route path="/" exact component={Hello} />
-                <Route path="/app" component={App} />
+                <Route path="/" exact component={App} />
                 <Route path="/list" component={List} />
+                <Route path="/receipe/:id" component={Recipe} />
             </div>
         </Router>
     )
