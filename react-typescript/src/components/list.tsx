@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import { Card, CardTitle, CardText, Row, Col } from 'reactstrap';
 
 class List extends React.Component {
     render() {
@@ -49,27 +49,20 @@ class List extends React.Component {
         ];
 
         return (
-            <div>
-                {data.length === 0 && (
-                    <div className="text-center">
-                        <h2>No customer found at the moment</h2>
-                    </div>
-                )}
-                <div className="container">
-                    <Row>
-                        {data && data.map((recipe) => {
-                            return (
-                                <Col sm="3">
-                                    <Card body>
-                                        <CardTitle>{recipe.title}</CardTitle>
-                                        <CardText>{recipe.short_desc}</CardText>
-                                        <Link to={`/receipe/${recipe.id}`}>See Full Recipe</Link>
-                                    </Card>
-                                </Col>
-                            )
-                        })}
-                    </Row>
-                </div>
+            <div className="container">
+                <Row>
+                    {data && data.map((recipe) => {
+                        return (
+                            <Col sm="3">
+                                <Card body>
+                                    <CardTitle>{recipe.title}</CardTitle>
+                                    <CardText>{recipe.short_desc}</CardText>
+                                    <Link to={`/receipe/${recipe.id}`}>See Full Recipe</Link>
+                                </Card>
+                            </Col>
+                        )
+                    })}
+                </Row>
             </div>
         );
     }

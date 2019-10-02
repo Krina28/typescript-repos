@@ -22,23 +22,23 @@ class Partners extends React.Component {
     render() {
         let companies = [{
             "name": "Instagram",
-            "logo": ""
+            "logo": "./instagram.png"
         }, {
             "name": "IDEO",
-            "logo": ""
+            "logo": "./ideo.png"
         }, {
             "name": "Pied Piper",
-            "logo": ""
+            "logo": "./pied_piper.jpg"
         }, {
             "name": "VidChat",
-            "logo": ""
+            "logo": "./videochat.jpg"
         }]
         return (
             <div className="partners-div">
                 {companies && companies.map((company) => {
                     return (
                         <Box className="box">
-                            <img alt="company" src={company.logo} />
+                            <img alt="company" className="img img-responsive partner-logo" src={process.env.PUBLIC_URL + company.logo} />
                             <span>{company.name}</span>
                         </Box>
                     )

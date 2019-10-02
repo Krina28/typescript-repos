@@ -13,7 +13,13 @@ code {
 }
 
 .partner-title{
-  align-content: center;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.partner-logo{
+  height: 150px;
+  width: 150px;
 }
 
 .partners-div{
@@ -92,4 +98,22 @@ code {
   background-position: center center;
   right: -3px;
   top: -3px;
+}
+
+.footer-msg{
+  text-align: center;
+  display: block;
+}
+
+.form-div{
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+
+.contact-info{
+  padding: 10px;
+}
+
+.contact-form{
+  padding: 10px;
 }

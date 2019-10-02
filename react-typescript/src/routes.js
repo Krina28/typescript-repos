@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import App from './App';
 import List from './components/list';
 import Recipe from './components/recipe';
+import Footer from './components/footer';
 
 function Routes() {
     return (
@@ -21,6 +22,7 @@ function Routes() {
                 <Route path="/" exact component={App} />
                 <Route path="/list" component={List} />
                 <Route path="/receipe/:id" component={Recipe} />
+                <Footer />
             </div>
         </Router>
     )
