@@ -1,24 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
+import { UncontrolledCarousel } from 'reactstrap';
 import './App.css';
+import ContactUS from './components/contactus';
+import Partners from './components/partners';
+import Categories from './components/categories';
 
 const App: React.FC = () => {
+  const slides = [
+    {
+      src: './pav_bhaji.jpg',
+      altText: 'Pav Bhaji',
+      header: 'Pav Bhaji'
+    },
+    {
+      src: './nachos.jpg',
+      altText: 'Nachos',
+      header: 'Nachos'
+    },
+    {
+      src: './pasta.jpg',
+      altText: 'Red Sauce Pasta',
+      header: 'Red Sauce Pasta'
+    }
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <UncontrolledCarousel cssModule={{ 'width': '300px' }} items={slides} />
+      <Categories />
+      <h3 className="partner-title">Our Partners</h3>
+      <Partners />
+      <ContactUS />
     </div>
   );
 }
