@@ -32,15 +32,15 @@ const Categories: React.FC = () => {
     }];
 
     return (
-        <div className="container">
-            <h3 className="partner-title">Categories</h3>
+        <div className="container partners-div">
+            <h3 className="category-title">Categories</h3>
             <Row>
-                {allCategories && allCategories.map((category) => {
+                {allCategories && allCategories.map((category, index) => {
                     return (
-                        <Col sm="3">
+                        <Col key={index} className="category-column" sm="3" md="3">
                             <Card>
                                 <CardBody>
-                                    <CardTitle>{category.name}</CardTitle>
+                                    <CardTitle className="category-text">{category.name}</CardTitle>
                                 </CardBody>
                             </Card>
                         </Col>
