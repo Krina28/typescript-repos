@@ -35,9 +35,9 @@ class Partners extends React.Component {
         }]
         return (
             <div className="partners-div">
-                {companies && companies.map((company) => {
+                {companies && companies.map((company, index) => {
                     return (
-                        <Box className="box">
+                        <Box key={index} className="box">
                             <img alt="company" className="img img-responsive partner-logo" src={process.env.PUBLIC_URL + company.logo} />
                             <span>{company.name}</span>
                         </Box>

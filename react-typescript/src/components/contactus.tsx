@@ -26,6 +26,7 @@ class ContactUS extends React.Component {
                 </Col>
                 <Col>
                     <div className="form-div">
+                        <h3 className="contact-title">Send us a message!!</h3>
                         <Form className="contact-form">
                             <FormGroup row>
                                 <Label for="first name" sm={2}>First Name</Label>

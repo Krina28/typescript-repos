@@ -8,7 +8,7 @@ import Categories from './components/categories';
 const App: React.FC = () => {
   const slides = [
     {
-      src: './pav_bhaji.jpg',
+      src: './pav_bhaji.jpeg',
       altText: 'Pav Bhaji',
       header: 'Pav Bhaji'
     },
@@ -26,10 +26,12 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <UncontrolledCarousel cssModule={{ 'width': '300px' }} items={slides} />
+      <UncontrolledCarousel captionText="Home-page" cssModule={{ 'width': '300px' }} items={slides} />
       <Categories />
-      <h3 className="partner-title">Our Partners</h3>
-      <Partners />
+      <div className="partner-main">
+        <h3 className="partner-title">Our Partners</h3>
+        <Partners />
+      </div>
       <ContactUS />
     </div>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Nav, NavItem, NavLink } from 'reactstrap';
 import App from './App';
 import List from './components/list';
 import Recipe from './components/recipe';
@@ -9,16 +10,17 @@ function Routes() {
     return (
         <Router>
             <div>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/list">List</Link>
-                        </li>
-                    </ul>
-                </nav>
+                <Nav>
+                    <NavItem>
+                        <Link to="/"><NavLink>Home</NavLink></Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link to="/list"><NavLink>All Recipes</NavLink></Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link to="/categories"><NavLink>Categories</NavLink></Link>
+                    </NavItem>
+                </Nav>
                 <Route path="/" exact component={App} />
                 <Route path="/list" component={List} />
                 <Route path="/receipe/:id" component={Recipe} />
